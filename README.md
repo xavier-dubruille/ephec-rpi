@@ -18,12 +18,16 @@ Une fois votre Raspberry allumé et branché avec un câble réseau (dans votre 
 la GW des Raspberry Pi est `192.168.20.254` . Lorsque celui si sera branché sur le même réseau qu'une GW avec cette IP, alors il aura accès à internet. 
 
 
-Il est possible de partager une connexion, de modifier la configuration du Microtik et/ou du RPi, mais ça peut prendre beaucoup de temps (et pas d'aide ne sera fournie)
+En théorie, il est possible de partager une connexion internet avec le RPi (en modifiant la configuration du Mikrotik et/ou du RPi), mais ça peut prendre beaucoup de temps/chippotage (et pas d'aide ne sera fournie).
 
 #### Autre Passwords
 * wifi (si il y en a) : `ephecephec` (n'hésitez pas à le changer)
 * interface d'administration du Mikrotik : `ephec`  (il n'est normalement pas nécessaire d'y accéder)
 
+## Note sur les cartes SD
+Il y a deux type de cartes: des cartes avec des numéro inférieur à 50 et d'autre suppérieur à 50 (entre 90 et 99 pour être exact).
+* Les inférieures à 50 sont nouvelles et fiable.  
+* Les suppérieur à 50 ne sont **ABSOLUMENT PAS** fiable. Ca ne devrait pas vous empêcher d'utiliser le raspberry pi (quoi que il pourrait être plus lent), mais ne l'utilisez pas pour installer des choses dessus (car il est probable que vos modifications ne s'enregistre pas réelement sur la carte et que tous disparaisse après un reboot)
 
 
 ## Déroulement des séances
@@ -78,7 +82,7 @@ Note: il n'y a pas que la difficulté de 'faire marcher' le capteur, il y a auss
 
 L'information de vitesse peut alors être déduite de la variation de la position par rapport au temps. Plus le codeur rotatif tourne lentement, plus la déduction de vitesse perd en précision."
 
-Les codeurs rotatif disponible ont 4 pin alors que dans l'exemple de 'gpio zero' il n'y en a que 3: c'est parceque ceux-ci ont également un bouton integré: c'est la pin nommée 'sw'.  La pin nomée 'Data' et 'Clk' peuvent être inter-changée (ca influcera sur quel sens de rotation est concidéré comme le positif.
+Les codeurs rotatif disponible ont 4 pin alors que dans l'exemple de 'gpio zero' il n'y en a que 3: c'est parceque ceux-ci ont également un bouton integré: c'est la pin nommée 'sw'.  Les pins nomées 'Data' et 'Clk' peuvent être inter-changé (ca influcera sur quel sens de rotation est concidéré comme le positif.
 
 # Le Servo moteur
 Le fil rouge est pour le vcc (en 5v), le brun est le Ground (0v) et le jaune est le signal (celui qui doit aller sur votre GPIO)
