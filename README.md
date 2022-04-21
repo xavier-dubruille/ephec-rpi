@@ -30,7 +30,7 @@ En théorie, il est possible de partager une connexion internet avec le RPi (en 
 sudo su
 apt update
 apt dist-upgrade
-apt install python-pip python3-pigpio tmux vim bpython
+apt install python-pip python3-pigpio git tmux vim bpython
 pip install Flask
 ```
 
