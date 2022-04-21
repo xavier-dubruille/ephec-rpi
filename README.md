@@ -39,22 +39,29 @@ Note: la librairie utilisé fût RPi.GPIO, mais on ne continuera pas avec.
 
 ### Séance 2 (jeudi 21 avril)
 * (Utilisation des Microtik )
-* La librairie RPi.GPIO est abandonnée au profit de gpiozero: Expérimentation avec une led et un bouton
+* La librairie RPi.GPIO est abandonnée au profit de gpiozero (https://gpiozero.readthedocs.io/en/stable/)
+* Quelque notions théorique sur les rpi et l'electronique
+* Installation de certaines chose sur votre Rpi (tel que Flask)
+* Experimentation électronique avec "GPIO Zero"
 * Intro à Flask: création d'un serveur Web.
 * Quelques nouveaux Capteurs sont introduit
-    * encodeur rotatif (difficultée 2/3)
-    * capteurs proximité (difficultée 1/3)
-    * buzzer (difficultée 1.5/3)
-    * capteurs température (difficultée 3/3)
+    * codeur rotatif 
+    * capteurs proximité 
+    * servo moteur
+    * buzzer 
+    * capteurs température (à confirmer)
     * Et d'autres ...
 
 
-Une grande difficultée de cette séance est de devoir gérer le serveur Web en même temps, ce qui implique que la partie 'electronique' du code ne peux pas bloquer la partie Web...
+Note :  Il était prévu de mettre ici des exemple d'utilisation de la librairie 'gpio zero', mais les exemples officiel sont très bien fait (avec des couleur et des shéma) ===> aller donc plutot là-bas: https://gpiozero.readthedocs.io/en/stable/recipes.html
+
+
+Note : Une difficultée de cette séance est de devoir gérer le serveur Web en même temps, ce qui implique que la partie 'electronique' du code ne peux pas bloquer la partie Web...
 
 
 Note: il n'y a pas que la difficulté de 'faire marcher' le capteur, il y a aussi la difficulté lié à votre senario, ex: une led n'est pas compliqué, mais afficher un nombre en binaire l'est plus... Un bouton n'est pas compliqué, mais une mini calculatrice l'est plus,... 
 
-* introduction au grand concours
+* introduction au concour
 
 ### Séance 3
 - travail sur votre projet
@@ -64,3 +71,18 @@ Note: il n'y a pas que la difficulté de 'faire marcher' le capteur, il y a auss
 - Présentation
 - Jury
 
+
+## Quelques info sur les capteurs à disposition
+# Le codeur rotatif
+[wikipedia] "Un codeur rotatif ou capteur rotatif est un type de capteur permettant de fournir une information d'angle, en mesurant la rotation effectuée autour d'un axe.
+
+L'information de vitesse peut alors être déduite de la variation de la position par rapport au temps. Plus le codeur rotatif tourne lentement, plus la déduction de vitesse perd en précision."
+
+Les codeurs rotatif disponible ont 4 pin alors que dans l'exemple de 'gpio zero' il n'y en a que 3: c'est parceque ceux-ci ont également un bouton integré: c'est la pin nommée 'sw'.  La pin nomée 'Data' et 'Clk' peuvent être inter-changée (ca influcera sur quel sens de rotation est concidéré comme le positif.
+
+# Le Servo moteur
+Le fil rouge est pour le vcc (en 5v), le brun est le Ground (0v) et le jaune est le signal (celui qui doit aller sur votre GPIO)
+Note: il y en a moins disponible
+
+# Le capteur "nivau d'eau/floteur"
+Il se comporte comme un button.  Lorsque l'eau soulève le floteur le circuit est fermé.
