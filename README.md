@@ -24,6 +24,16 @@ En théorie, il est possible de partager une connexion internet avec le RPi (en 
 * wifi (si il y en a) : `ephecephec` (n'hésitez pas à le changer)
 * interface d'administration du Mikrotik : `ephec`  (il n'est normalement pas nécessaire d'y accéder)
 
+
+## Choses à upgrader/installer sur le raspberry pi
+```
+sudo su
+apt update
+apt dist-upgrade
+apt install python-pip python3-pigpio tmux vim bpython
+pip install Flask
+```
+
 ## Note sur les cartes SD
 Il y a deux type de cartes: des cartes avec des numéro inférieur à 50 et d'autre suppérieur à 50 (entre 90 et 99 pour être exact).
 * Les inférieures à 50 sont nouvelles et fiable.  
@@ -90,3 +100,8 @@ Note: il y en a moins disponible
 
 # Le capteur "nivau d'eau/floteur"
 Il se comporte comme un button.  Lorsque l'eau soulève le floteur le circuit est fermé.
+
+
+## Ressources utile
+* https://create.withcode.uk/python/A5  ==> pour tester un code python en ligne (en utlisant RPi.GPIO)
+* https://gpiozero.readthedocs.io/en/stable/recipes.html
