@@ -1,28 +1,31 @@
 # ephec-rpi
 
-Vous trouverez ici des exemples ainsi que certaines informations utiles pour les ateliers Raspberry Pi en première TI à l'Ephec.
+Vous trouverez ici des exemples ainsi que certaines informations utiles pour les ateliers Raspberry Pi du projet Transversal (1T Ephec).
+
+## Ressources utiles:
+- Formation groupes : http://tiny.cc/transversal1T2023
+- Teams (communications officiel et informel): "projet transversal" dans votre Teams
+- Exemples de codes: ce github
+- librairie python pour utilisation des gpio: https://gpiozero.readthedocs.io/en/stable/
+- intro au python: https://wiki.python.org/moin/BeginnersGuide/Programmers
+==> mais beaucoup de choses existe sur internet, n'hésitez pas à chercher
 
 ## Configurations réseau
 Les Raspberry Pi ont un numéro(unique) sur leur carte SD, ce numéro défini leur IP(Statique) et leur Hostname:
 * Leur IP est: `192.168.20.[numero_unique] / 24`
 * Leur hostname est: `pi[numero_unique]`.
 * Leur username est: `pi`
-* Leur password est: `ephec` (vous pouvez le changer)
+* Leur password est: `ephec` (vous pouvez le changer, mais on ne pourra pas vous aider si vous oubliez le nouveau)
 
 Une fois votre Raspberry allumé et branché avec un câble réseau (dans votre ordi ou dans le switch), vous pouvez vous y connecter (en ssh), soit:
-* en spécifiant juste son hostname (dans l'outil utilisé pour s'y connecter) ex: ssh pi@pi10 (il se connectera en IPv6 en utilisant le protocole de neighbours discovery)
-* en vous connectant au wifi du Mikotik puis en utilisant l'ipv4 du Raspberry Pi (il y a un DHCP sur l'interface du wifi, donc il n'y a rien à faire)
+* en utilisant juste son hostname: ex: ssh pi@pi10 (il se connectera en IPv6 en utilisant le protocole de neighbours discovery)
 * en configurant une IP statique sur votre ordinateur (si vous êtes en câblé) pour être dans le même sous réseauque votre Raspberry Pi) puis utilisez l'ipv4 du RPi.
+* Si les routeurs (et access point wifi) sont déjà en place (normalement à partir du deuxième atelier), vous aurrez un serveur DHCP et vous pourrez vous y connecter en spéficiant son address IPv4 (plus d'info arriveront lorsque le réseau sera en place)
 
-#### Accès internet : 
-la GW des Raspberry Pi est `192.168.20.254` . Lorsque celui si sera branché sur le même réseau qu'une GW avec cette IP, alors il aura accès à internet. 
-
-
-En théorie, il est possible de partager une connexion internet avec le RPi (en modifiant la configuration du Mikrotik et/ou du RPi), mais ça peut prendre beaucoup de temps/chippotage (et pas d'aide ne sera fournie).
 
 #### Autre Passwords
 * wifi (si il y en a) : `ephecephec` (n'hésitez pas à le changer)
-* interface d'administration du Mikrotik : `ephec`  (il n'est normalement pas nécessaire d'y accéder)
+* interface d'administration du Mikrotik (si on utilise des Mikrotik) : `ephec`  (il n'est normalement pas nécessaire d'y accéder)
 
 
 ## Choses à upgrader/installer sur le raspberry pi
@@ -35,39 +38,25 @@ pip install Flask
 ```
 
 ## Note sur les cartes SD
-Il y a deux type de cartes: des cartes avec des numéro inférieur à 50 et d'autre suppérieur à 50 (entre 90 et 99 pour être exact).
-* Les inférieures à 50 sont nouvelles et fiable.  
-* Les suppérieur à 50 ne sont **ABSOLUMENT PAS** fiable. Ca ne devrait pas vous empêcher d'utiliser le raspberry pi (quoi que il pourrait être plus lent), mais ne l'utilisez pas pour installer des choses dessus (car il est probable que vos modifications ne s'enregistre pas réelement sur la carte et que tous disparaisse après un reboot)
+Vos cartes sont normalement entre 51 et 80.  Si ce n'est pas le cas, prevenez-nous.
+Pour info:
+* Les cartes entre 1 et 30 sont des cartes probablement pas vierge, utilisé pour l'année passée
+* Les carte entre 90 et 100 sont des cartes en fin de vie qui ne sont **ABSOLUMENT PAS** fiable
+
+Si vous avez des soucis tel que des difficultées à vous connecter ou un système buggé (du, par exemple, à une mauvaise manipulation), un mot de passe oublié, ...  n'hésitez pas venir echanger votre carte.
 
 
 ## Déroulement des séances
-### Séance 1
+### Séance 1 (jeudi 14 février)
 Intro au Python, au Raspberry Pi. Allumage d'une led ainsi d'une utilisation d'un bouton poussoir.
+Des exemple de code sont disponible dans le directory "exemples par scéance".
+Ressource utile: https://gpiozero.readthedocs.io/en/stable/ ( + google ;)
 
-
-
-(Je ne met pas de ressources d'exemple, car une simple recherche donne que des ressources intéressantes)
-
-
-Note: la librairie utilisé fût RPi.GPIO, mais on ne continuera pas avec.
-
-### Séance 2 (jeudi 21 avril)
-* (Utilisation des Microtik )
-* La librairie RPi.GPIO est abandonnée au profit de gpiozero (https://gpiozero.readthedocs.io/en/stable/)
-* Quelque notions théorique sur les rpi et l'electronique
+### Séance 2 (jeudi 2 mars)
+* (Possible: Utilisation des Microtik )
 * Installation de certaines chose sur votre Rpi (tel que Flask)
-* Experimentation électronique avec "GPIO Zero"
-* Intro à Flask: création d'un serveur Web.
-* Quelques nouveaux Capteurs sont introduit
-    * codeur rotatif 
-    * capteurs proximité 
-    * servo moteur
-    * buzzer 
-    * capteurs température (à confirmer)
-    * Et d'autres ...
-
-
-Note :  Il était prévu de mettre ici des exemple d'utilisation de la librairie 'gpio zero', mais les exemples officiel sont très bien fait (avec des couleur et des shéma) ===> aller donc plutot là-bas: https://gpiozero.readthedocs.io/en/stable/recipes.html
+* Intro à Flask: création d'un serveur Web + un peu plus de Python
+* Approfondissement de l'utilisation de gpiozero + quelques notions supplémentaire sur les rpi et l'electronique
 
 
 Note : Une difficultée de cette séance est de devoir gérer le serveur Web en même temps, ce qui implique que la partie 'electronique' du code ne peux pas bloquer la partie Web...
@@ -75,15 +64,19 @@ Note : Une difficultée de cette séance est de devoir gérer le serveur Web en 
 
 Note: il n'y a pas que la difficulté de 'faire marcher' le capteur, il y a aussi la difficulté lié à votre senario, ex: une led n'est pas compliqué, mais afficher un nombre en binaire l'est plus... Un bouton n'est pas compliqué, mais une mini calculatrice l'est plus,... 
 
-* introduction au concour
+### Séance 3 (jeudi 9 mars)
+* Quelques nouveaux Capteurs sont introduit
+    * codeur rotatif 
+    * capteurs proximité 
+    * servo moteur
+    * buzzer 
+    * capteurs température (à confirmer)
+    * Et d'autres ...
+* travail sur votre projet
 
-### Séance 3
-- travail sur votre projet
-- plus de capteurs pour les intéressés
-
-### Séance 4
-- Présentation
-- Jury
+### Séance 4 (jeudi 23 mars)
+- travail de groupe
+- Présentation / Jury
 
 
 ## Quelques info sur les capteurs à disposition
