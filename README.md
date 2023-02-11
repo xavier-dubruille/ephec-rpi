@@ -5,7 +5,7 @@ Vous trouverez ici des exemples ainsi que certaines informations utiles pour les
 ## Ressources utiles:
 - Formation groupes : http://tiny.cc/transversal1T2023
 - Teams (communications officiel et informel): "projet transversal" dans votre Teams
-- Exemples de codes: ce github
+- Exemples de code/ résolution d'exercices: ce github
 - librairie python pour utilisation des gpio: https://gpiozero.readthedocs.io/en/stable/
 - intro au python: https://wiki.python.org/moin/BeginnersGuide/Programmers
 ==> mais beaucoup de choses existe sur internet, n'hésitez pas à chercher
@@ -43,20 +43,20 @@ Pour info:
 * Les cartes entre 1 et 30 sont des cartes probablement pas vierge, utilisé pour l'année passée
 * Les carte entre 90 et 100 sont des cartes en fin de vie qui ne sont **ABSOLUMENT PAS** fiable
 
-Si vous avez des soucis tel que des difficultées à vous connecter ou un système buggé (du, par exemple, à une mauvaise manipulation), un mot de passe oublié, ...  n'hésitez pas venir echanger votre carte.
+Si vous avez des soucis tel que des difficultées à vous connecter ou un système buggé (du, par exemple, à une mauvaise manipulation), un mot de passe oublié, ...  n'hésitez pas à venir échanger votre carte.
 
 
 ## Déroulement des séances
 ### Séance 1 (jeudi 14 février)
 Intro au Python, au Raspberry Pi. Allumage d'une led ainsi d'une utilisation d'un bouton poussoir.
-Des exemple de code sont disponible dans le directory "exemples par scéance".
+Des exemples de code sont disponible dans le directory "exemples par scéance".
 Ressource utile: https://gpiozero.readthedocs.io/en/stable/ ( + google ;)
 
 ### Séance 2 (jeudi 2 mars)
 * (Possible: Utilisation des Microtik )
-* Installation de certaines chose sur votre Rpi (tel que Flask)
+* Installation de certaines choses sur votre Rpi (tel que Flask)
 * Intro à Flask: création d'un serveur Web + un peu plus de Python
-* Approfondissement de l'utilisation de gpiozero + quelques notions supplémentaire sur les rpi et l'electronique
+* Approfondissement de l'utilisation de gpiozero + quelques notions supplémentaire sur les rpi et l'électronique
 
 
 Note : Une difficultée de cette séance est de devoir gérer le serveur Web en même temps, ce qui implique que la partie 'electronique' du code ne peux pas bloquer la partie Web...
@@ -65,7 +65,7 @@ Note : Une difficultée de cette séance est de devoir gérer le serveur Web en 
 Note: il n'y a pas que la difficulté de 'faire marcher' le capteur, il y a aussi la difficulté lié à votre senario, ex: une led n'est pas compliqué, mais afficher un nombre en binaire l'est plus... Un bouton n'est pas compliqué, mais une mini calculatrice l'est plus,... 
 
 ### Séance 3 (jeudi 9 mars)
-* Quelques nouveaux Capteurs sont introduit
+* Quelques nouveaux capteurs sont introduit
     * codeur rotatif 
     * capteurs proximité 
     * servo moteur
@@ -94,7 +94,3 @@ Note: il y en a moins disponible
 # Le capteur "nivau d'eau/floteur"
 Il se comporte comme un button.  Lorsque l'eau soulève le floteur le circuit est fermé.
 
-
-## Ressources utile
-* https://create.withcode.uk/python/A5  ==> pour tester un code python en ligne (en utlisant RPi.GPIO)
-* https://gpiozero.readthedocs.io/en/stable/recipes.html
