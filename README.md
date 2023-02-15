@@ -5,14 +5,15 @@ Vous trouverez ici des exemples ainsi que certaines informations utiles pour les
 ## Ressources utiles:
 - Formation groupes : http://tiny.cc/transversal1T2023
 - Teams (communications officiel et informel): "projet transversal" dans votre Teams
-- Exemples de code/ résolution d'exercices: ce github
+- Exemples de code/ résolution d'exercices (par Séance + d'autre pas classé): les dossiers 'exemples' et 'exemples_old' de ce repository
 - librairie python pour utilisation des gpio: https://gpiozero.readthedocs.io/en/stable/
-- intro au python: https://wiki.python.org/moin/BeginnersGuide/Programmers
+- Une 'Cheat Sheet' qui n'a peut etre pas été finie/imprimé, mais dont les éléments la constituant se trouvant dans le dossier 'Cheat Sheet' de ce repository.
+- intro au python (vous n'aurez pas besoin de grand chose): https://wiki.python.org/moin/BeginnersGuide/Programmers
 ==> mais beaucoup de choses existe sur internet, n'hésitez pas à chercher
 
 ## Configurations réseau
-Les Raspberry Pi ont un numéro(unique) sur leur carte SD, ce numéro défini leur IP(Statique) et leur Hostname:
-* Leur IP est: `192.168.20.[numero_unique] / 24`
+Les Raspberry Pi ont un numéro(unique) sur leur carte SD, ce numéro défini leur Hostname et (pour certaines) leur IPv4 statique:
+* Leur IP(pour les cartes configurée pour) est: `192.168.20.[numero_unique] / 24`
 * Leur hostname est: `pi[numero_unique]`.
 * Leur username est: `pi`
 * Leur password est: `ephec` (vous pouvez le changer, mais on ne pourra pas vous aider si vous oubliez le nouveau)
@@ -28,7 +29,7 @@ Une fois votre Raspberry allumé et branché avec un câble réseau (dans votre 
 * interface d'administration du Mikrotik (si on utilise des Mikrotik) : `ephec`  (il n'est normalement pas nécessaire d'y accéder)
 
 
-## Choses à upgrader/installer sur le raspberry pi
+## Choses à upgrader/installer sur le raspberry pi (lorsque votre raspberry aura internet ==> à partir de la deuxième séance)
 ```
 sudo su
 apt update
@@ -38,12 +39,7 @@ pip install Flask
 ```
 
 ## Note sur les cartes SD
-Vos cartes sont normalement entre 51 et 80.  Si ce n'est pas le cas, prevenez-nous.
-Pour info:
-* Les cartes entre 1 et 30 sont des cartes probablement pas vierge, utilisé pour l'année passée
-* Les carte entre 90 et 100 sont des cartes en fin de vie qui ne sont **ABSOLUMENT PAS** fiable
-
-Si vous avez des soucis tel que des difficultées à vous connecter ou un système buggé (du, par exemple, à une mauvaise manipulation), un mot de passe oublié, ...  n'hésitez pas à venir échanger votre carte.
+Les cartes avec un numéro au dessus de 50 sont un peu plus vielle et un peu moins fiable.  Normalement, ca n'impacte pas la lecture, mais l'écriture (ex: lors d'un reboot, il est possible que vos données n'aient pas persisté) ==> faites donc bien des backups sur votre PC et, au moindre comportement suspect, n'hésitez pas à venir changer votre carte.
 
 
 ## Déroulement des séances
