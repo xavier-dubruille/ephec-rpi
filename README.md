@@ -20,11 +20,14 @@ Les Raspberry Pi ont un numéro(unique) sur leur carte SD, ce numéro défini le
 * Leur password est: `ephec` (vous pouvez le changer, mais on ne pourra pas vous aider si vous oubliez le nouveau)
 
 Une fois votre Raspberry allumé et branché avec un câble réseau (dans votre ordi ou dans le switch), vous pouvez vous y connecter (en ssh), soit:
-* En utilisant juste son hostname: ex: `ssh pi@pi10` (il se connectera en IPv6 en utilisant le protocole de `neighbours discovery`)
+* En utilisant juste son hostname: ex: `ssh pi@pi10` (il se connectera en IPv6 en utilisant le protocole de *neighbours discovery*)
 * ~~en configurant une IP statique sur votre ordinateur (si vous êtes en câblé) pour être dans le même sous-réseau que votre Raspberry Pi) puis utilisez l'ipv4 du RPi.~~
-* Si le(s) routeur(s) (& wifi ?) sont déjà en place (à partir du deuxième atelier), il y aura un serveur DHCP et vous pourez utiliser son IPv4. Ex: `ssh pi@192.168.20.242`
-==> Votre raspberry pi **ET** votre ordinateur doivent être branché sur le routeur ou switch fourni. Pour trouver l'adresse IP de votre Raspberry Pi, le plus simple, c'est de demander à quelqu'un d'autre (par exemple un autre groupe ? Tant qu'il est branché au switch ...), d'utiliser la méthode 1 pour vous récuperer son IP (note: pour connaitre les addresses IP sur un linux, il suffit de tape `ip a`)
-Note: tous les appareils branchés aurront aussi une connection internet (pour pouvoir mettre les Raspberry Pi à jour )
+* Si le routeur + switchs (+ wifi ?) sont déjà en place (à partir du deuxième atelier), il y aura un serveur DHCP (avec un accès internet) et vous pourez aussi (pas obligatoire) utiliser l'IPv4 du Raspberry. Ex: `ssh pi@192.168.20.242` (note: l'ip commencera toujour par *192.168.20._ *)
+
+==> Votre raspberry pi **ET** votre ordinateur doivent être branché sur le routeur/switch. 
+Pour trouver l'adresse IP de votre Raspberry Pi, le plus simple, c'est de demander à quelqu'un d'autre (par exemple un autre groupe ? Tant qu'il est branché au switch ...), d'utiliser la méthode 1 pour vous récuperer son IP (note: pour connaitre les addresses IP sur linux, il suffit de taper `ip a`)
+
+
 Note sur le wifi: **Si** il y a une connection wifi, elle sera probablement pas stable (car beaucoup d'interférences et pas prévue pour supporter beaucoup de connections simultanées) ==>  Evitez donc de l'utiliser autant que possible et, si vous devez l'utiliser, limitez le trafique !   Cette connection wifi peu avoir du sens pour accèder, depuis votre téléphone, à la page web que vous aurez construite ou si **vraiment** vous n'avez **absolument** pas d'autre solution pour brancher votre ordinateur avec un cable.
 
 #### Autre Passwords
