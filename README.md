@@ -4,7 +4,8 @@ Vous trouverez ici des exemples ainsi que certaines informations utiles pour les
 
 ## Ressources utiles:
 - Formation groupes : http://tiny.cc/transversal1T2023
-- Teams (communications officiel et informel): "projet transversal" dans votre Teams
+- Teams (communications lors des séances plus communications informelles): "projet transversal" dans votre Teams
+- Mail pour les communications officielles
 - Exemples de code/ résolution d'exercices (par Séance + d'autre pas classé): les dossiers 'exemples' et 'exemples_old' de ce repository
 - librairie python pour utilisation des gpio: https://gpiozero.readthedocs.io/en/stable/
 - Une 'Cheat Sheet' qui n'a peut etre pas été finie/imprimé, mais dont les éléments la constituant se trouvant dans le dossier 'Cheat Sheet' de ce repository.
@@ -12,20 +13,22 @@ Vous trouverez ici des exemples ainsi que certaines informations utiles pour les
 ==> mais beaucoup de choses existe sur internet, n'hésitez pas à chercher
 
 ## Configurations réseau
-Les Raspberry Pi ont un numéro(unique) sur leur carte SD, ce numéro défini leur Hostname et (pour certaines) leur IPv4 statique:
-* Leur IP(pour les cartes configurée pour) est: `192.168.20.[numero_unique] / 24`
+Les Raspberry Pi ont un numéro(unique) sur leur carte SD, ce numéro défini leur Hostname (et, anciennement, leur IPv4 statique):
+* ~~Leur IP(pour les cartes configurée pour) est: `192.168.20.[numero_unique] / 24`~~
 * Leur hostname est: `pi[numero_unique]`.
 * Leur username est: `pi`
 * Leur password est: `ephec` (vous pouvez le changer, mais on ne pourra pas vous aider si vous oubliez le nouveau)
 
 Une fois votre Raspberry allumé et branché avec un câble réseau (dans votre ordi ou dans le switch), vous pouvez vous y connecter (en ssh), soit:
-* en utilisant juste son hostname: ex: ssh pi@pi10 (il se connectera en IPv6 en utilisant le protocole de neighbours discovery)
-* en configurant une IP statique sur votre ordinateur (si vous êtes en câblé) pour être dans le même sous réseauque votre Raspberry Pi) puis utilisez l'ipv4 du RPi.
-* Si les routeurs (et access point wifi) sont déjà en place (normalement à partir du deuxième atelier), vous aurrez un serveur DHCP et vous pourrez vous y connecter en spéficiant son address IPv4 (plus d'info arriveront lorsque le réseau sera en place)
-
+* En utilisant juste son hostname: ex: `ssh pi@pi10` (il se connectera en IPv6 en utilisant le protocole de `neighbours discovery`)
+* ~~en configurant une IP statique sur votre ordinateur (si vous êtes en câblé) pour être dans le même sous-réseau que votre Raspberry Pi) puis utilisez l'ipv4 du RPi.~~
+* Si le(s) routeur(s) (& wifi ?) sont déjà en place (à partir du deuxième atelier), il y aura un serveur DHCP et vous pourez utiliser son IPv4. Ex: `ssh pi@192.168.20.242`
+==> Votre raspberry pi **ET** votre ordinateur doivent être branché sur le routeur ou switch fourni. Pour trouver l'adresse IP de votre Raspberry Pi, le plus simple, c'est de demander à quelqu'un d'autre (par exemple un autre groupe ? Tant qu'il est branché au switch ...), d'utiliser la méthode 1 pour vous récuperer son IP (note: pour connaitre les addresses IP sur un linux, il suffit de tape `ip a`)
+Note: tous les appareils branchés aurront aussi une connection internet (pour pouvoir mettre les Raspberry Pi à jour )
+Note sur le wifi: **Si** il y a une connection wifi, elle sera probablement pas stable (car beaucoup d'interférences et pas prévue pour supporter beaucoup de connections simultanées) ==>  Evitez donc de l'utiliser autant que possible et, si vous devez l'utiliser, limitez le trafique !   Cette connection wifi peu avoir du sens pour accèder, depuis votre téléphone, à la page web que vous aurez construite ou si **vraiment** vous n'avez **absolument** pas d'autre solution pour brancher votre ordinateur avec un cable.
 
 #### Autre Passwords
-* wifi (si il y en a) : `ephecephec` (n'hésitez pas à le changer)
+* wifi (si il y en a) : `ephecephec`
 * interface d'administration du Mikrotik (si on utilise des Mikrotik) : `ephec`  (il n'est normalement pas nécessaire d'y accéder)
 
 
@@ -33,13 +36,13 @@ Une fois votre Raspberry allumé et branché avec un câble réseau (dans votre 
 ```
 sudo su
 apt update
-apt dist-upgrade
-apt install python-pip python3-pigpio git tmux vim bpython
+apt dist-upgrade -y
+apt install -y python3-pip  git tmux vim bpython
 pip install Flask
 ```
 
 ## Note sur les cartes SD
-Les cartes avec un numéro au dessus de 50 sont un peu plus vielle et un peu moins fiable.  Normalement, ca n'impacte pas la lecture, mais l'écriture (ex: lors d'un reboot, il est possible que vos données n'aient pas persisté) ==> faites donc bien des backups sur votre PC et, au moindre comportement suspect, n'hésitez pas à venir changer votre carte.
+Les cartes avec un numéro au dessus de 50 (la majorité des cartes cette année) sont plus vielle et un peu moins fiable.  Normalement, ca n'impacte pas la lecture, mais l'écriture (ex: lors d'un reboot, il est possible que vos données n'aient pas persisté) ==> faites donc bien des backups sur votre PC et, au moindre comportement suspect, n'hésitez pas à venir changer votre carte ==> les professeurs ont quelques cartes avec tout le necessaire déjà installé (donc pas la peine de repasser par l'étape précédente)
 
 
 ## Déroulement des séances
@@ -68,14 +71,14 @@ Note: il n'y a pas que la difficulté de 'faire marcher' le capteur, il y a auss
     * buzzer 
     * capteurs température (à confirmer)
     * Et d'autres ...
-* travail sur votre projet
+* Définition et travail sur votre projet
 
 ### Séance 4 (jeudi 23 mars)
-- travail de groupe
+- Travail sur votre projet
 - Présentation / Jury
 
 
-## Quelques info sur les capteurs à disposition
+## Quelques info sur les capteurs à disposition (note: info pas mise à jour et incomplete)
 # Le codeur rotatif
 [wikipedia] "Un codeur rotatif ou capteur rotatif est un type de capteur permettant de fournir une information d'angle, en mesurant la rotation effectuée autour d'un axe.
 
