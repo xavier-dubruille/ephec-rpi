@@ -44,6 +44,11 @@ apt install -y python3-pip  git tmux vim bpython
 pip install Flask
 ```
 
+## Conseils
+- [une fois tmux installé] lancez tmux dés que vous êtes connecté ainsi, si vous perdez la connection, vous pourrez, en vous reconnectant, tapper `tmux a`, et revenir là où vous étiez
+- [une fois git installé] vous pouvez faire un `git clone https://github.com/xavier-dubruille/ephec-rpi.git` pour récupérer tout ce repository (ainsi que les exemples)
+- les erreurs python sont vite arrivée et la coloration syntaxique est très utile: soit codez sur votre ordinateur (dans un IDE) et copier sur votre raspberry pi (ex: avec nano) ou bien vous pouvez aussi utiliser vim
+
 ## Note sur les cartes SD
 Les cartes avec un numéro au dessus de 50 (la majorité des cartes cette année) sont plus vielle et un peu moins fiable.  Normalement, ca n'impacte pas la lecture, mais l'écriture (ex: lors d'un reboot, il est possible que vos données n'aient pas persisté) ==> faites donc bien des backups sur votre PC et, au moindre comportement suspect, n'hésitez pas à venir changer votre carte ==> les professeurs ont quelques cartes avec tout le necessaire déjà installé (donc pas la peine de repasser par l'étape précédente)
 
@@ -64,7 +69,7 @@ Ressource utile: https://gpiozero.readthedocs.io/en/stable/ ( + google ;)
 Note : Une difficultée de cette séance est de devoir gérer le serveur Web en même temps, ce qui implique que la partie 'electronique' du code ne peux pas bloquer la partie Web...
 
 
-Note: il n'y a pas que la difficulté de 'faire marcher' le capteur, il y a aussi la difficulté lié à votre senario, ex: une led n'est pas compliqué, mais afficher un nombre en binaire l'est plus... Un bouton n'est pas compliqué, mais une mini calculatrice l'est plus,... 
+Note: il n'y a pas que la difficulté de 'faire marcher' le capteur, il y a aussi la difficulté lié à votre senario, ex: une led n'est pas compliqué, mais afficher un nombre en binaire l'est plus... Un bouton n'est pas compliqué, mais une mini calculatrice l'est plus, ... 
 
 ### Séance 3 (jeudi 9 mars)
 * Quelques nouveaux capteurs sont introduit
