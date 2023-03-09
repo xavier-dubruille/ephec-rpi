@@ -86,6 +86,40 @@ Note: il n'y a pas que la difficulté de 'faire marcher' le capteur, il y a auss
 - Présentation / Jury
 
 
+# Capteurs 
+Pour la troisième séance, vous avez accès à beaucoup plus de capteur afin de réaliser votre projet.
+
+Parmi les capteurs à disposition, je les mettrais en 3 catégories: 
+1. Les "conseillés" ==> ils sont 'relativement' simple, et marchent avec gpiozero (aller voir les exemples et les montage sur le site de gpiozero!)
+2. les "challenging" ==> ils sont testé, du code est a disposition, mais gpiozero ne suffira pas, il faudra utiliser 'pythonCircuit', heureusement des cartes SD avec tout installé sont dispo) 
+3. les "hardcore" ==> pas de code fourni, probablement qu'ils vous faudra installer des choses supplémentaire et on ne pourra vous fournir qu'une aide limité (en fonction de la disponibilité)
+
+J'en oublie peut-etre, mais voici les capteurs disponible par catégorie:
+1. Consseilé :
+- Boutton and co  ==> il y a beauchoup de capteurs qui se comportent comme des boutons et sont très simpa à utiliser (genre le tilt sensor)
+- LED (notement qq RGB)
+- buzzer
+- Capteur de lumière
+- Capteur de distance
+- Capteur de mouvement
+- servo moteur
+- encodeur rotatif
+- relay ?  (pas compliqué, mais necessite un autre appareil à controler)
+
+2. Challenging
+- Capteur de températeur et humidité
+- Capteur de pression et d'altitude
+- Certains autre capteurs fourni dans le boite de découverte de capteurs
+- 7 segment unique
+
+3. Hardcore
+- Recepteur Infra rouge
+- emeteur-recepteur 433 Mhz
+- multiple 7-segment
+- controleur de moteur
+- ... et le reste des capteurs random dispo
+
+
 ## Quelques info sur les capteurs à disposition (note: info pas mise à jour et incomplete)
 # Le codeur rotatif
 [wikipedia] "Un codeur rotatif ou capteur rotatif est un type de capteur permettant de fournir une information d'angle, en mesurant la rotation effectuée autour d'un axe.
