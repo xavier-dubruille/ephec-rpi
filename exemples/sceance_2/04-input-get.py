@@ -1,7 +1,7 @@
 from flask import Flask, request
 from gpiozero import *
 
-led = PWMLED(21)
+led = PWMLED(21, frequency=2000)
 app = Flask(__name__)
 
 @app.route('/')
